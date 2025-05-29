@@ -1,4 +1,3 @@
-<img width="418" alt="image" src="https://github.com/user-attachments/assets/616331e0-bdfd-49ef-a380-3bcaa7886d43" /># EX-NO-7-Implement-DES-Encryption
 
 ## Aim:
 
