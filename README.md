@@ -1,4 +1,4 @@
-# EX-NO-7-Implement-DES-Encryption
+<img width="418" alt="image" src="https://github.com/user-attachments/assets/616331e0-bdfd-49ef-a380-3bcaa7886d43" /># EX-NO-7-Implement-DES-Encryption
 
 ## Aim:
 
@@ -12,11 +12,44 @@ To use the Data Encryption Standard (DES) algorithm for a practical application,
 4. DES applies initial and final permutations along with 16 rounds of substitution and permutation transformations to produce ciphertext.
 
 ## Program:
+```
+
+#include <stdio.h>
+#include <string.h>
+void xorCrypt(char *in, char *key, char *out, int len)
+{
+  for (int i = 0; i < len; i++) out[i] = in[i] ^ key[i % strlen(key)];
+  out[len] = 0;
+}
+int main() 
+{
+  char msg[100], key[100], enc[100], dec[100];
+  printf("Enter message: "); fgets(msg, 100, stdin);
+  msg[strcspn(msg, "\n")] = 0;
+  printf("Enter key: "); fgets(key, 100, stdin);
+  key[strcspn(key, "\n")] = 0;
+
+  int len = strlen(msg);
+  xorCrypt(msg, key, enc, len);
+  printf("Encrypted: ");
+  for (int i = 0; i < len; i++) printf("%02X ", (unsigned char)enc[i]);
+  printf("\n");
+
+  xorCrypt(enc, key, dec, len);
+  printf("Decrypted: %s\n", dec);
+  return 0;
+}
+```
+
+
+
 
 
 
 
 ## Output:
+<img width="418" alt="image" src="https://github.com/user-attachments/assets/2447e5e7-501f-4d6e-9177-276f2d5ce071" />
+
 
 
 ## Result:
